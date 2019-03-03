@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require('express')
 const bodyParser = require('body-parser')
 const contentFilter = require('content-filter')
 const expressValidator = require('express-validator')
 const routes = require('../../api')
-//Create express app
+// Create express app
 const app = express()
 
 // Takes the raw requests and turns them into usable properties on req.body
