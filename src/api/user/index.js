@@ -1,6 +1,6 @@
 const router = require('express').Router()
-const userController = require('./controller')
+const { index } = require('./controller')
 
-router.get('/', userController.index)
+router.get('/', index)
 
 module.exports = router
