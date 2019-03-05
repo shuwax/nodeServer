@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const bcrypt = require('bcrypt')
 const userSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -26,6 +26,12 @@ const userSchema = new mongoose.Schema({
     maxlength: 50
   }
 })
+
+userSchema.methods = {
+  authenticate (password) {
+    return bcrypt.compare(password, this.password).then((valid) => valid ? this : false)
+  }
+}
 
 const model = mongoose.model('User', userSchema)
 
