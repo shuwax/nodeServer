@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+mongoose.set('useCreateIndex', true)
 // Change id to string
 mongoose.Types.ObjectId.prototype.view = function () {
   return { id: this.toString() }
